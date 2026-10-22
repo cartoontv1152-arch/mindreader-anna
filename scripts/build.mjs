@@ -1,0 +1,14 @@
+import {build} from 'esbuild';
+import {mkdir,copyFile,writeFile,readFile} from 'node:fs/promises';
+import sharp from 'sharp';
+await mkdir('bundle/assets',{recursive:true});await mkdir('listing-assets',{recursive:true});
+await build({entryPoints:['src/app.js'],bundle:true,format:'esm',target:'es2022',outfile:'bundle/app.js',minify:true,external:['/static/*'],loader:{'.svg':'text'},legalComments:'eof'});
+for(const name of ['index.html','styles.css'])await copyFile(`src/${name}`,`bundle/${name}`);
+await copyFile('node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2','bundle/assets/geist-latin-wght-normal.woff2');
+await copyFile('node_modules/@fontsource-variable/geist/LICENSE','bundle/assets/Geist-LICENSE.txt');
+await copyFile('node_modules/@phosphor-icons/core/LICENSE','bundle/assets/Phosphor-LICENSE.txt');
+const icon=await readFile('node_modules/@phosphor-icons/core/assets/regular/brain.svg','utf8');
+const glyph=icon.replace(/<svg[^>]*>/,'<g transform="translate(86 86) scale(1.33)" fill="#e4f4a4">').replace('</svg>','</g>');
+const logo=`<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="124" fill="#205846"/>${glyph}</svg>`;
+await writeFile('bundle/assets/favicon.svg',logo);await sharp(Buffer.from(logo)).png().toFile('listing-assets/mindreader-logo.png');
+console.log('Built MindReader with bundled local font and icons.');

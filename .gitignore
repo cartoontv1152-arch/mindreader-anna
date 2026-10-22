@@ -1,0 +1,6 @@
+node_modules/
+.anna/
+.env*
+output/
+*.log
+test-results/

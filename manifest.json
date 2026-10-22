@@ -1,0 +1,13 @@
+{
+  "schema": 3, "host_capabilities": ["llm.complete"],
+  "required_executas": [], "optional_executas": [],
+  "system_prompt_addendum": "MindReader is a single-page AI 20-questions game. Open its main view and let the user think of a secret, choose a category, and press I'm ready. It asks real Host LLM questions based on four one-tap answers and makes one final guess. Never ask the user to reveal the secret before the game. No Executa or Agent is required.",
+  "tags": ["game", "guessing", "twenty-questions", "ai"],
+  "ui": {
+    "bundle": {"format": "static-spa", "entry": "index.html", "external_origins": []},
+    "form_factors": ["desktop", "mobile"],
+    "views": [{"name": "main", "title": "MindReader", "default": true, "entry": "index.html", "default_size": {"w": 1000, "h": 760}, "min_size": {"w": 320, "h": 520}, "max_size": {"w": 1600, "h": 1200}, "resizable": true, "movable": true, "single_instance": true, "summary_template": "AI 20-questions guessing game"}],
+    "host_api": {"llm": ["complete"], "window": ["ready", "set_title"]},
+    "csp_overrides": {"script-src": ["'self'"]}, "state_merge": "last_writer_wins"
+  }
+}
