@@ -3,7 +3,7 @@
   "tagline": "Your secret. Twenty questions. One curious AI.",
   "description": "Think of an animal, everyday object, food, or fictional character. Press I'm ready and let Anna AI try to work it out. Answer with Yes, No, Sometimes, or Don't know. AI asks up to 20 questions and makes one final guess; you decide whether it got it right. Pick a category or play Anything, undo an accidental answer, inspect your clues, and play again on the same simple screen. Every question and guess comes from real Anna AI, with no fixed answer list or scripted fake AI. Your secret is never requested before the guess. Games stay in memory and are not saved by the app. Anna AI access and normal account quota are required. This is a guessing game, not actual mind reading, and AI can be wrong. No extra API key, Executa, or Agent setup is needed.",
   "changelog": "First release: direct-start 20-question game, five categories, one-tap answers, undo, clue history, final guess, and honest retry states.",
-  "category": "entertainment", "logo_file": "listing-assets/mindreader-logo.png", "screenshots": ["listing-assets/01-ready.png"],
+  "category": "entertainment", "logo_file": "listing-assets/mindreader-logo.png", "screenshots": ["listing-assets/01-ready.png", "listing-assets/02-question.png"],
   "homepage_url": "https://github.com/cartoontv1152-arch/mindreader-anna",
   "support_url": "https://github.com/cartoontv1152-arch/mindreader-anna/issues",
   "privacy_url": "https://github.com/cartoontv1152-arch/mindreader-anna/blob/main/PRIVACY.md"
