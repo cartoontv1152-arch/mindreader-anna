@@ -13,7 +13,7 @@ Architecture: schema 3 static SPA, direct Host `llm.complete`, no storage or Exe
 - Desktop 1000×760 and mobile 390×844 first-open views checked through Chrome Use. Start and category controls fit; mobile clue history is collapsed on first open. Harness mobile mode remounts the iframe and intentionally starts a new in-memory game.
 - Source repository created separately: https://github.com/cartoontv1152-arch/mindreader-anna.
 
-Remaining release gates: upload immutable version, install exact version and verify grants, complete a real game in Anna, capture genuine production screenshots, submit for review and independently verify the pinned candidate. Do not release publicly before approval.
+Release sequence: upload immutable version, install exact version and verify grants, complete a real game in Anna, capture genuine production screenshots, submit for review and independently verify the pinned candidate. Do not release publicly before approval.
 
 ## Uploaded and installed, 2026-10-22
 
@@ -27,3 +27,9 @@ Remaining release gates: upload immutable version, install exact version and ver
 - Installed Food round completed with 8 answered clues, AI's final guess `cherry`, and the `You stumped me` result after an incorrect-guess confirmation. The user also interacted during this live test. Replay was observed starting a new Food game at Question 1 with zero clues. These were real production UI states, not test fixtures. The result was observed in AX text; the next screenshot captured the already-started replay and is labelled accordingly.
 - Installed question screenshot shows all four answer buttons, the question count, clue history, and Undo fitting the default app window. Two genuine installed screenshots are used for the listing.
 - Chrome responsive checks covered 390px mobile first-open behavior; dark-theme/error-state contrast was visually checked with a temporary Chrome media emulation, then restored. No browser preference changes were left in place.
+
+## Review submission confirmed
+
+`apps submit-review mindreader-game --account https://anna.partners --json` succeeded. An independent `apps status` read confirmed app ID `648`, status `pending_review`, candidate `1.0.0`, version ID `1555`, and `is_published: false`. The Developer Console also visibly shows MindReader as **In review**, with Install v1.0.0. A proof screenshot is in ignored `output/review-pending-full.png`.
+
+The exact installed and tested version has been submitted. Public Marketplace release awaits Anna approval; no `apps release` command was run. Source, privacy policy, local assets, and listing metadata are pushed to the separate GitHub repository. The Anna game and review page are left open in Chrome.
